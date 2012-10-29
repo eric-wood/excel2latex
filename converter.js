@@ -124,6 +124,7 @@ excelParser = {
     $('body').bind('dragover', function(event) {
       event.stopPropagation();
       event.preventDefault();
+      event.dataTransfer.dropEffect = 'copy';
     });
 
     $('body').bind('drop', excelParser.handleFile);
