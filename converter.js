@@ -132,6 +132,6 @@ excelParser = {
 };
 
 $(function() {
-  zip.workerScriptsPath = '/zip/';
+  zip.workerScriptsPath = 'zip/';
   excelParser.init();
 });
