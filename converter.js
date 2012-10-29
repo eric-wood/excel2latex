@@ -71,7 +71,7 @@ excelParser = {
   handleSheet: function(entries, stringTable) {
     // filter out all files that aren't worksheets
     var sheets = $.grep(entries, function(n,i) {
-      return /^xl\/worksheets\//.test(n.filename);
+      return (/^xl\/worksheets\/.*\.xml$/.test(n.filename)) && (!/^xl\/worksheets\/_rels/.test(n.filename));
     });
 
     // for now, only process the first sheet
