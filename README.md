@@ -1,5 +1,7 @@
 # Excel => LaTeX
 
+Check out the [demo](http://ericwood.org/excel2latex/).
+
 A silly Javascript tool for converting Excel spreadsheets into LaTeX tables.
 
 Right now I don't have any settings for what the resulting table looks like...I want to add this eventually, it's not difficult or anything. Sorry in advance if the formatting isn't what you're looking for, I'll make it more flexible in the future!
