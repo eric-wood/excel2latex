@@ -1,4 +1,13 @@
 excelParser = {
+  latexEscape: function(text) {
+    var specials = ['\\', '&', '%', '$', '#', '_', '{', '}', '~', '^'];
+    $.each(specials, function(i,special) {
+      text = text.replace(special, '\\' + special);
+    });
+
+    return text;
+  },
+
   parseStringTable: function(data) {
     var doc = $(data);
     var stringTags = doc.find('si');
@@ -55,9 +64,9 @@ excelParser = {
       var cols = $(row).find('c');
       var colVals = $.map(cols, function(col,j) {
         var col = $(col);
-        var val = col.find('v').text();
+        var val = excelParser.latexEscape(col.find('v').text());
         if(col.attr('t') == 's') {
-          return stringTable[parseInt(val)];
+          return excelParser.latexEscape(stringTable[parseInt(val)]);
         } else {
           return val;
         }
