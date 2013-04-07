@@ -1,8 +1,13 @@
 excelParser = {
   latexEscape: function(text) {
+    escapeRegExpr = function(str) {
+      return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+    };
+
     var specials = ['\\', '&', '%', '$', '#', '_', '{', '}', '~', '^'];
-    $.each(specials, function(i,special) {
-      text = text.replace(special, '\\' + special);
+    $.each(specials, function() {
+      var regexp = new RegExp(escapeRegExpr(this), 'g');
+      text = text.replace(regexp, '\\' + this, 'g');
     });
 
     return text;
