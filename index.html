@@ -25,6 +25,9 @@
       <h1 class="title">excel => LaTeX</h1>
       <h4 class="info">Drag any .xlsx file onto the page to extract data and convert it into a LaTeX table</h4>
       <div class="content">
+        <label for="workbook">Workbook:</label>
+        <select id="workbook" name="workbook"></select>
+
         <textarea id="latex-output" readonly="readonly"></textarea>
         <p>Mostly untested, so if you find a bug or have a feature request, <a href="https://github.com/eric-wood/excel2latex/issues">let me know!</a>
         <p class="disclaimer">Note: this only works with .xlsx files. That means .xls files will <b>not</b> work.</p>
@@ -32,7 +35,7 @@
         <p>Lovingly hacked together by <a href="http://ericwood.org">Eric Wood</a></p>
       </div>
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type="text/javascript" src="zip/zip.js"></script>
     <script type="text/javascript" src="converter.js"></script>
   </body>
