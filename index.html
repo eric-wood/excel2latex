@@ -28,7 +28,7 @@
         <label for="workbook">Workbook:</label>
         <select id="workbook" name="workbook"></select>
 
-        <textarea id="latex-output" readonly="readonly"></textarea>
+        <textarea id="latex-output" readonly="readonly" onclick="this.select();"></textarea>
         <p>Mostly untested, so if you find a bug or have a feature request, <a href="https://github.com/eric-wood/excel2latex/issues">let me know!</a>
         <p class="disclaimer">Note: this only works with .xlsx files. That means .xls files will <b>not</b> work.</p>
         <p>Formatting from the Excel document won't be preserved, only the text will be extracted.</p>
