@@ -14,7 +14,7 @@ Not completely sure, but most likely newer versions of Chrome, Firefox, and IE 1
 
 ### Shout outs
 
-Thanks to [zip.js](http://gildas-lormeau.github.com/zip.js/">zip.js) for making this thing possible. It's a badass library.
+Thanks to [zip.js](http://gildas-lormeau.github.com/zip.js/) for making this thing possible. It's a badass library.
 
 ### License
 
