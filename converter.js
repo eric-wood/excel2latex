@@ -8,6 +8,9 @@
   var latexOutput = {};
 
   var excelParser = {
+    //latexEnvironment: 'tabular',
+    latexEnvironment: 'array',
+
     latexEscape: function(text) {
       var escapeRegExpr = function(str) {
         return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
@@ -44,7 +47,7 @@
         args[i] = 'l';
       }
       args = ' | ' + args.join(' | ') + ' | ';
-      var latex = "\\begin{tabular}{" + args + "}\n\\hline\n";
+      var latex = "\\begin{" + excelParser.latexEnvironment + "}{" + args + "}\n\\hline\n";
       for(i=0; i < table.length; i++) {
         var cols = table[i];
         // TODO: replace "&" with "\&"
@@ -59,7 +62,7 @@
         latex += " \\\\ \\hline\n";
       }
 
-      latex += "\\end{tabular}\n";
+      latex += "\\end{" + excelParser.latexEnvironment + "}\n";
       
       return latex;
     },
@@ -130,11 +133,18 @@
             
             // I apologize for the hack :(
             if(id === '1') {
-              $('#latex-output').val(latex);
+              excelParser.showOutput(1);
             }
           });
         });
       });
+    },
+
+    showOutput: function(id) {
+      var latex = latexOutput[id];
+      $('#latex-output').val(latex);
+      $('#preview').html('$$\n' + latex + '\n$$');
+      MathJax.Hub.Typeset("preview");
     },
 
     handleFiles: function(event) {
@@ -202,8 +212,7 @@
       // when a new workbook is selected, do stuff!
       $('#workbook').change(function(event) {
         var select = $(event.target);
-        var output = latexOutput[select.val()];
-        $('#latex-output').val(output);
+        excelParser.showOutput(select.val());
       });
     }
   };
