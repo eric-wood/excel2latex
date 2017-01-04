@@ -12,6 +12,8 @@
     latexEnvironment: 'array',
 
     latexEscape: function(text) {
+      if(!$('#escape').is(':checked')) return text;
+
       var escapeRegExpr = function(str) {
         return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
       };
@@ -63,7 +65,7 @@
       }
 
       latex += "\\end{" + excelParser.latexEnvironment + "}\n";
-      
+
       return latex;
     },
 
@@ -110,7 +112,7 @@
       // read the workbook meta data to get the names and crap
       workbookMeta.getData(new zip.TextWriter(), function(text) {
         var doc = $(text);
-        
+
         // extract the names of the workbooks and their IDs for use later on...
         $.each(doc.find('sheets sheet'), function(i, tag) {
           tag = $(tag);
@@ -125,12 +127,12 @@
         $.each(sheets, function(_, sheet) {
           // the ID of the spreadsheet can only be found in the filename apparently :P
           var id = sheet.filename.match(/(\d)\.xml/)[1];
-          
+
           sheet.getData(new zip.TextWriter(), function(text) {
             var table = excelParser.processSheet(text, stringTable);
             var latex = excelParser.toLatex(table);
             latexOutput[id] = latex;
-            
+
             // I apologize for the hack :(
             if(id === '1') {
               excelParser.showOutput(1);
