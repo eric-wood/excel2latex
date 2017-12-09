@@ -1,25 +1,32 @@
 # Excel => LaTeX
 
-Check out the [demo](http://ericwood.org/excel2latex/).
+Check it out here: [excel2latex.com](http://excel2latex.com).
 
-A silly Javascript tool for converting Excel spreadsheets into LaTeX tables.
+A silly Javascript tool for converting Excel spreadsheets into LaTeX tables, born out of a desire to write tools to help me work on lab reports instead of actually writing lab reports.
 
-Right now I don't have any settings for what the resulting table looks like...I want to add this eventually, it's not difficult or anything. Sorry in advance if the formatting isn't what you're looking for, I'll make it more flexible in the future!
+### Local development
 
-I just whipped this up in a few hours for fun, and haven't really tested it much. Pleasepleaseplease let me know if you manage to break it, I'd really appreciate it.
+excel2latex is a static site built with [parcel](https://parceljs.org). If you're looking to contribute, you can run the site locally using these directions.
 
-### Compatability
+First, install the packages we need:
 
-Not completely sure, but most likely newer versions of Chrome, Firefox, and IE 10 will work great with this. Only tested on Chrome...this is just a little experiment ;)
+```bash
+npm install
+```
 
-### Shout outs
+Once that completes, you can boot up the dev server:
 
-Thanks to [zip.js](http://gildas-lormeau.github.com/zip.js/) for making this thing possible. It's a badass library.
+```bash
+npm start 
+```
+
+This will boot up an http server that you can access at `http://localhost:1234`. Hooray!
+
 
 ### License
 
 ```
-Copyright (c) 2012, Eric Wood
+Copyright (c) 2018, Eric Wood
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

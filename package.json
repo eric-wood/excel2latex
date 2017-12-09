@@ -1,0 +1,18 @@
+{
+  "name": "excel2latex",
+  "version": "1.0.0",
+  "description": "Convert xslx files to LaTeX tables, in your browser!",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --no-minify --public-url ./",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist"
+  },
+  "author": "Eric Wood",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "parcel-bundler": "^1.1.0"
+  }
+}

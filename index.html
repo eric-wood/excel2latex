@@ -1,53 +1,6 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <title>Excel => LaTeX</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript">
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-92247838-1', 'auto');
-      ga('send', 'pageview');
-    </script>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-2094934741938997",
-    enable_page_level_ads: true
-  });
-    </script>
-  </head>
-  <body>
-    <a href="https://github.com/eric-wood/excel2latex"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-    <div class="center">
-      <h1 class="title">excel => LaTeX</h1>
-      <h4 class="info">Drag any .xlsx file onto the page to extract data and convert it into a LaTeX table</h4>
-      <div class="content">
-        <label for="workbook">Workbook:</label>
-        <select id="workbook" name="workbook"></select>
-
-        <textarea id="latex-output" readonly="readonly" onclick="this.select();"></textarea>
-
-        <div class="settings">
-          <input type="checkbox" name="escape" id="escape" checked="checked">
-          <label for="escape">Escape input text</label>
-        </div>
-
-        <p>Mostly untested, so if you find a bug or have a feature request, <a href="https://github.com/eric-wood/excel2latex/issues">let me know!</a>
-        <p class="disclaimer">Note: this only works with .xlsx files. That means .xls files will <b>not</b> work.</p>
-        <p>Formatting from the Excel document won't be preserved, only the text will be extracted.</p>
-        <p>Lovingly hacked together by <a href="http://ericwood.org">Eric Wood</a></p>
-      </div>
-      <h4>Preview</h4>
-      <div id="preview">$$ \LaTeX $$</div>
-    </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="zip/zip.js"></script>
-    <script type="text/javascript" src="converter.js"></script>
-  </body>
+<body>
+  <script src="index.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</body>
 </html>
